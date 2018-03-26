@@ -119,4 +119,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'C:/Users/JOSEPH/Desktop/Desktop/learning_log/ll_env/Lib/site-packages/django/contrib/admin/static/admin/'
