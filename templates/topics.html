@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="">Home</a>
+<a href="topics">Topics</a>
+<a href="about">About Us</a>
+<a href="contact">Contact Us</a>
+
+<h1>Topics</h1>
+<ul>
+    {% for topic in topics %}
+        <a href=""><li>{{ topic }}</li></a>
+    {% empty %}
+        <li>No Topics Added Yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
