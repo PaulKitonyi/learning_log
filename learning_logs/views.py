@@ -17,7 +17,7 @@ def topics(request):
 def topic(request):
     """Return Stored Topics and all its Entries."""
     topic = Topic.objects.all()
-    entries = topic.entry_set.order_by('date_added')
+    entries = topic.order_by('date_added')
     context = {'topic':topic, 'entries':entries}
     return render(request,'topic.html',context)
 

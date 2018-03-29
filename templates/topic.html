@@ -6,13 +6,16 @@
 <a href="/about/">About Us</a>
 <a href="/contact/">Contact Us</a>
 
-<h1>Topic: {{ topic }}</h1>
+{% for topic in topics %}
+    <h1>Topic: {{ topic }}</h1>
+{% endfor %}
 <ul>
     {% for entry in entries %}
     <li>{{ entry }}</li>
-        <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-        <p>{{ entry.text|linebreaks }}</p>
+        <p>{{ entry.text }} {{ entry.date_added }}</p>
+    {% empty %}
     <li>No entries Added Yet.</li>
     {% endfor %}
 </ul>
+
 {% endblock %}

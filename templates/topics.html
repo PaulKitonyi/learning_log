@@ -15,14 +15,4 @@
     {% endfor %}
 </ul>
 
-<h1>Topic: {{ topic }}</h1>
-<ul>
-    {% for entry in entries %}
-    <li>{{ entry }}</li>
-    <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-    <p>{{ entry.text|linebreaks }}</p>
-    <li>No entries Added Yet.</li>
-    {% endfor %}
-</ul>
-
 {% endblock %}
