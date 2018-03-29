@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<a href="">Home</a>
-<a href="topics">Topics</a>
-<a href="about">About Us</a>
-<a href="contact">Contact Us</a>
+<a href="/">Home</a>
+<a href="/topics/">Topics</a>
+<a href="/topic/">Topic</a>
+<a href="/about/">About Us</a>
+<a href="/contact/">Contact Us</a>
 
 <h1>Topics</h1>
 <ul>
@@ -13,4 +14,15 @@
         <li>No Topics Added Yet.</li>
     {% endfor %}
 </ul>
+
+<h1>Topic: {{ topic }}</h1>
+<ul>
+    {% for entry in entries %}
+    <li>{{ entry }}</li>
+    <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+    <p>{{ entry.text|linebreaks }}</p>
+    <li>No entries Added Yet.</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

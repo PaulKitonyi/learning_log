@@ -14,12 +14,18 @@ def topics(request):
     context = {'topics':topics}
     return render(request,'topics.html',context)
 
-def topic(request, topic_id):
+def topic(request):
     """Return Stored Topics and all its Entries."""
-    topic = Topic.objects.get(id=topic_id)
+    topic = Topic.objects.all()
     entries = topic.entry_set.order_by('date_added')
     context = {'topic':topic, 'entries':entries}
     return render(request,'topic.html',context)
+
+def entries(request):
+    """Return all Entries"""
+    entries = Entry.objects.order_by('date_added')
+    context = {'entries':entries}
+    return render(request,'topics.html',context)
 
 def about_us(request):
     """Return About Us Page"""

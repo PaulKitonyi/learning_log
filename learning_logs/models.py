@@ -12,7 +12,7 @@ class Topic(models.Model):
 
 class Entry(models.Model):
 	"""Something Specific Learned about a topic."""
-	topic 	   = models.ForeignKey(Topic,'')
+	topic 	   = models.ForeignKey(Topic,models)
 	text  	   = models.TextField()
 	date_added = models.DateTimeField(auto_now_add=True)
 
