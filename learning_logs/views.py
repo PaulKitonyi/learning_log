@@ -10,20 +10,20 @@ def index(request):
 
 def topics(request):
     """Return Stored Topics."""
-    topics = Topic.objects.order_by('date_added')
+    topics = Topic.objects.order_by('-date_added')
     context = {'topics':topics}
     return render(request,'topics.html',context)
 
-def topic(request):
+def topic(request, topic_id):
     """Return Stored Topics and all its Entries."""
-    topic = Topic.objects.all()
-    entries = topic.order_by('date_added')
+    topic = Topic.objects.get(id=topic_id)
+    entries = topic.Entry_set.order_by('-date_added')
     context = {'topic':topic, 'entries':entries}
     return render(request,'topic.html',context)
 
 def entries(request):
     """Return all Entries"""
-    entries = Entry.objects.order_by('date_added')
+    entries = Entry.objects.order_by('-date_added')
     context = {'entries':entries}
     return render(request,'topics.html',context)
 
